@@ -1,6 +1,6 @@
 CC:= clang
 SOURCES:= $(wildcard src/*.c)
-OBJECTS:= $(addprefix obj/,$(notdir $(SOURCES:.c=.o)))
+OBJECTS:= $(notdir $(SOURCES:.c=.o))
 
 CFLAGS:= -c -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -isystem /usr/local/include/SDL2 -Iinclude
 LDFLAGS:= -L/usr/local/lib
