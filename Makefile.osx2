@@ -1,0 +1,26 @@
+CC:= gcc-5
+SOURCES:= $(wildcard src/*.c)
+OBJECTS:= $(addprefix obj/,$(notdir $(SOURCES:.c=.o)))
+
+CFLAGS:= -c -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -isystem /usr/local/include/SDL2 -Iinclude
+LDFLAGS:= -L/usr/local/lib
+LDLIBS:= -lSDL2 -lSDL2_image
+
+EXECUTABLE:= game
+
+# Instantly runs the game after linking
+run: $(EXECUTABLE)
+	./$(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	@echo "Linking..."
+	$(CC) $(LDFLAGS) $(LDLIBS) -o $@ $^
+	@echo "Linking for target $(EXECUTABLE) succeeded!"
+
+obj/%.o: src/%.c
+	@echo "Compiling:"
+	$(CC) $(CFLAGS) -o $@ $<
+
+.PHONY: clean
+clean:
+	-rm $(OBJECTS)
