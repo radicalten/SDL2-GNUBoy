@@ -16,7 +16,7 @@ jobs:
         git clone --branch SDL2 --depth 1 https://github.com/libsdl-org/SDL.git
         cmake sdl
         make
-        make install
+        sudo make install
     - name: Compile
       run: |
         make -f Makefile.osx -j$(nproc)
