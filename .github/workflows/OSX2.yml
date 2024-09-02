@@ -1,4 +1,4 @@
-name: OSX
+name: OSX2
 on:
   push:
     branches:
