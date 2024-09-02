@@ -8,10 +8,6 @@ LDLIBS:= -lSDL2 -lSDL2_image
 
 EXECUTABLE:= game
 
-# Instantly runs the game after linking
-run: $(EXECUTABLE)
-	./$(EXECUTABLE)
-
 $(EXECUTABLE): $(OBJECTS)
 	@echo "Linking..."
 	$(CC) $(LDFLAGS) $(LDLIBS) -o $@ $^
