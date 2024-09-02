@@ -16,6 +16,6 @@ jobs:
     - name: brew install
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     - name: sdl2 install
-      run: sudo brew install sdl2 sdl2_image sdl2_mixer sdl2_net sdl2_ttf
+      run: brew install sdl2 sdl2_image sdl2_mixer sdl2_net sdl2_ttf
     - name: make
       run: make -f Makefile.osx
