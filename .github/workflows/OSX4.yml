@@ -19,7 +19,7 @@ jobs:
         sudo make install
     - name: Compile
       run: |
-        make -f Makefile.osx2
+        make -f Makefile.osx3
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
