@@ -1,0 +1,28 @@
+name: OSX
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Brew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    - name: Install SDL2
+      run: |
+        brew install SDL2
+        brew install SDL2_image
+        brew install SDL2_ttf
+    - name: Compile
+      run: |
+        make -f Makefile.osx -j$(nproc)
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: Artifact
+        path: |
+          ./
