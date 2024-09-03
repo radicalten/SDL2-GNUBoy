@@ -20,6 +20,9 @@ jobs:
     - name: Compile
       run: |
         make -f Makefile.sdl2min
+    - name: Create tarball
+      run: |
+          tar -cvf mac-sdl2gnuboy.tgz mac-sdl2gnuboy
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
