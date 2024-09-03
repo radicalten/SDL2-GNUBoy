@@ -9,7 +9,7 @@ AS = $(CC)
 INSTALL = /usr/bin/install -c
 
 CFLAGS = -Wall -O3 -I./include
-LDFLAGS = $(CFLAGS)
+LDFLAGS = $(CFLAGS) -I/opt/homebrew/include/SDL2 -L/opt/homebrew/lib -Wl,-rpath,/opt/homebrew/lib -lSDL2
 ASFLAGS = $(CFLAGS)
 
 TARGETS =  mac-sdl2gnuboy
