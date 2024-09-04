@@ -28,4 +28,4 @@ jobs:
       with:
         name: Artifact
         path: |
-          .
+          ./mac-sdl2gnuboy.tgz
