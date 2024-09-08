@@ -19,7 +19,7 @@ SYS_OBJS = sys/nix/nix.o ./sys/nix/io.o ./sys/nix/io_pipe.o ./sys/nix/io_none.o 
 SYS_INCS = -I/usr/local/include  -I./sys/nix
 
 SDL_OBJS = sys/sdl2/sdl-video.o sys/sdl2/sdl-audio.o sys/sdl2/sdl-input.o
-SDL_LIBS = -L/usr/lib -lSDL2 -lpthread
+SDL_LIBS = -L/usr/lib -lSDL2 
 SDL_CFLAGS = -I/usr/include/SDL2 -D_REENTRANT
 
 
